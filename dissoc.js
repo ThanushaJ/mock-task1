@@ -1,6 +1,6 @@
 //dissoc("b", { a: 1, b: 2, c: 3 }); //=> {a: 1, c: 3}
 
-function dissoc(prop, obj) {
+let dissoc = (prop, obj) => {
   //   let result = {};
   let { ...result } = obj;
   if (obj.hasOwnProperty(prop)) {
@@ -12,4 +12,4 @@ function dissoc(prop, obj) {
   } else {
     return result;
   }
-}
+};

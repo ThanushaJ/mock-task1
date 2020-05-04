@@ -1,10 +1,10 @@
-function hasInbuilt(prop, obj) {
+let hasInbuilt = (prop, obj) => {
   return obj.hasOwnProperty(prop);
-}
+};
 
-function has(prop, obj) {
+let has = (prop, obj) => {
   for (let key in obj) {
     if (key === prop) return true;
   }
   return false;
-}
+};

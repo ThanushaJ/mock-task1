@@ -3,18 +3,7 @@
 // hasPath(["a", "b"], { a: { c: 2 } }); // => false
 // hasPath(["a", "b"], {}); // => false
 
-function getKeys(obj, keyList) {
-  for (let key in obj) {
-    keyList.push(key);
-
-    if (typeof obj[key] === "object") {
-      getKeys(obj[key], keyList);
-    }
-  }
-  return keyList;
-}
-
-function hasPath(path, obj) {
+let hasPath = (path, obj) => {
   let keyList = [];
   let result = false;
   let finalKeys = getKeys(obj, keyList);
@@ -24,4 +13,15 @@ function hasPath(path, obj) {
     }
   });
   return result;
-}
+};
+
+let getKeys = (obj, keyList) => {
+  for (let key in obj) {
+    keyList.push(key);
+
+    if (typeof obj[key] === "object") {
+      getKeys(obj[key], keyList);
+    }
+  }
+  return keyList;
+};
