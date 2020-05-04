@@ -8,8 +8,10 @@ let hasPath = (path, obj) => {
   let result = false;
   let finalKeys = getKeys(obj, keyList);
   finalKeys.forEach((element, index) => {
-    if (path[index] === finalKeys[index]) {
+    if (finalKeys.includes(path[index])) {
       result = true;
+    } else {
+      result = false;
     }
   });
   return result;
