@@ -12,13 +12,18 @@ function concat(arg1, arg2) {
 
   if (typeof arg1 === "object") {
     let result = [];
-    arg1.forEach((element) => {
-      result.push(element);
-    });
+    // arg1.forEach((element) => {
+    //   result.push(element);
+    // });
 
-    arg2.forEach((element) => {
-      result.push(element);
-    });
+    // arg2.forEach((element) => {
+    //   result.push(element);
+    // });
+
+    //using Array Destructuring
+
+    result = [...arg1];
+    result.push(...arg2);
 
     return result;
   }
